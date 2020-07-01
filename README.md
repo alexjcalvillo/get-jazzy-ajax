@@ -6,11 +6,10 @@
 
 ## Base
 
-- Look at the pattern for the working `/artist` server code & AJAX request. 
+- Look at the pattern for the working `/artist` server code & AJAX request.
 - Add comments in the code to explain what you think is happening. Set break points on the client side to help you figure out the order of the code.
 - Add the server side code to return all the song data when a GET request is made for `/song`. Test this is working with the browser.
 - Set up a client AJAX request for `/song`, and display the song data on the DOM.
-
 
 ## Stretch
 

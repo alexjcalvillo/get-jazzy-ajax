@@ -1,58 +1,28 @@
-const express = require('express');
+const express = require('express'); // import module 'express' and declare/assign it to express
+const artistListArray = require('./modules/artist');
+const songListArray = require('./modules/songs');
+const albumsListArray = require('./modules/albums');
 
-const app = express();
-const PORT = 5000;
+const app = express(); // call express function and declare/assign to app
+const PORT = 5000; // declare const PORT as 5000 to be used later
 
-const artistListArray = [
-    {
-        name: 'Miles Davis',
-        born: 1926,
-        died: 1990,
-    },
-    {
-        name: 'Duke Ellington',
-        born: 1899,
-        died: 1974,
-    },
-    {
-        name: 'John Coltrane',
-        born: 1926,
-        died: 1987,
-    },
-    {
-        name: 'Louis Daniel Armstrong',
-        born: 1901,
-        died: 1971,
-    },
-];
-
-const songListArray = [
-    {
-        title: 'Take Five',
-        artist: 'The Dave Brubeck Quartet',
-    },
-    {
-        title: 'So What',
-        artist: 'Miles Davis',
-    },
-    {
-        title: 'Sing Sing Sing',
-        artist: 'Benny Goodman',
-    },
-    {
-        title: 'Take the "A" Train',
-        artist: 'The Dave Brubeck Quartet',
-    },
-];
-
-app.use(express.static('server/public'));
+app.use(express.static('server/public')); //enhances app(or express()) to run static files from the base route
 
 app.get('/artist', (req, res) => {
-    res.send(artistListArray);
+  // when the server is hit at the artist route
+  res.send(artistListArray); // send back the artistListArray in response
 });
 
 // TODO - Add GET for songs
+app.get('/song', (req, res) => {
+  res.send(songListArray);
+});
+
+app.get('/albums', (req, res) => {
+  res.send(albumsListArray);
+});
 
 app.listen(PORT, () => {
-    console.log('listening on port', PORT)
+  // tells express to open a server and listen
+  console.log('listening on port', PORT); // for a connection on previously defined PORT
 });
