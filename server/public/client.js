@@ -24,10 +24,10 @@ function onReady() {
   }).then((response) => {
     for (let song of response) {
       $('#songTableBody').append(`
-      <tr>
-        <td>${song.title}</td>
-        <td>${song.artist}</td>
-      </tr>
+        <tr>
+          <td>${song.title}</td>
+          <td>${song.artist}</td>
+        </tr>
         `);
     }
   });
